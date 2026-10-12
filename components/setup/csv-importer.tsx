@@ -37,6 +37,10 @@ const GLASS_CARD =
 
 type Parsed = { fileName: string; items: InventoryItem[]; skipped: number };
 
+/**
+ * Parses and previews CSV inventory, flags locations outside racks in the supplied grid,
+ * and submits valid rows for import by SKU.
+ */
 export function CsvImporter({ grid }: { grid: LayoutMatrix }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);

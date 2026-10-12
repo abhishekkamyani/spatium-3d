@@ -26,6 +26,7 @@ const badgeVariants = cva(
   }
 )
 
+/** Renders a badge variant on a span or applies its styling to a child through a slot. */
 function Badge({
   className,
   variant = "default",

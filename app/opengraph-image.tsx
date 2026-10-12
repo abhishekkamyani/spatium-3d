@@ -5,6 +5,7 @@ export const alt = "Spatium 3D";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+/** Generates the branded 1200×630 PNG used for social link previews. */
 export default function Image() {
   return new ImageResponse(
     (

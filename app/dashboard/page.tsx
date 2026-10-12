@@ -18,6 +18,7 @@ const WarehouseScene = dynamic(
 
 const GLASS = "border border-white/10 bg-black/40 backdrop-blur-xl";
 
+/** Loads warehouse data and renders the 3D scene, inventory summary, and rack controls. */
 export default function DashboardPage() {
   const status = useWarehouseStore((state) => state.status);
   const error = useWarehouseStore((state) => state.error);
@@ -154,6 +155,7 @@ export default function DashboardPage() {
   );
 }
 
+/** Renders a labeled color swatch for the warehouse scene legend. */
 function LegendItem({ className, label }: { className: string; label: string }) {
   return (
     <li className="flex items-center gap-2">
@@ -163,6 +165,7 @@ function LegendItem({ className, label }: { className: string; label: string }) 
   );
 }
 
+/** Centers a status message over the warehouse scene with an accessible status role. */
 function StatusCard({ children }: { children: React.ReactNode }) {
   return (
     <div className="pointer-events-none fixed inset-0 z-10 grid place-items-center p-4">

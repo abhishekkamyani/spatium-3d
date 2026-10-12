@@ -19,6 +19,10 @@ interface WarehouseState {
   updateItem: (item: InventoryItem) => Promise<void>;
 }
 
+/**
+ * Fetches a JSON response, returning null if decoding fails on a successful response.
+ * Throws the API error message or a fallback when the HTTP response is not OK.
+ */
 async function getJson<T>(url: string): Promise<T> {
   const response = await fetch(url);
   const body = await response.json().catch(() => null);

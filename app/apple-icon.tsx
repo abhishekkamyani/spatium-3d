@@ -3,6 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
+/** Generates the 180×180 PNG icon used by Apple devices. */
 export default function AppleIcon() {
   return new ImageResponse(
     (

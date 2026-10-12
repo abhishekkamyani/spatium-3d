@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 const MAX_RESULTS = 50;
 
+/** Shows up to 50 inventory matches by SKU or name and selects a result’s rack location. */
 export function ItemFinder({ className }: { className?: string }) {
   const inventory = useWarehouseStore((state) => state.inventory);
   const selected = useWarehouseStore((state) => state.selected);

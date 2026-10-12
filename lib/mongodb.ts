@@ -17,6 +17,11 @@ const cache: MongooseCache = (globalForMongoose._mongoose ??= {
   promise: null,
 });
 
+/**
+ * Returns the cached Mongoose connection or shares an in-flight connection attempt.
+ * Reads MONGODB_URI lazily, falling back to the local database. Connection failures
+ * are rethrown and clear the cached promise so later calls can retry.
+ */
 export async function connectToDatabase(): Promise<typeof mongoose> {
   if (cache.conn) return cache.conn;
 

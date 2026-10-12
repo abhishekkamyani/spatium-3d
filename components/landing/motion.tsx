@@ -33,6 +33,7 @@ export function Stagger({ children, className }: Props) {
   );
 }
 
+/** Wraps content with fade and slide variants driven by its parent Stagger group. */
 export function StaggerItem({ children, className }: Props) {
   return (
     <motion.div className={className} variants={item}>

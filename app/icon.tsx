@@ -3,6 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
+/** Generates the 32×32 PNG site icon. */
 export default function Icon() {
   return new ImageResponse(
     (

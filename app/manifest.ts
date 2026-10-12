@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
 
+/** Builds the web app manifest with site branding, standalone display, and icon URLs. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,

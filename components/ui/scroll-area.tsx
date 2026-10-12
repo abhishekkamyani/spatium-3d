@@ -4,6 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { ScrollArea as ScrollAreaPrimitive } from "radix-ui"
 
+/** Wraps content in a Radix scroll viewport with a vertical scrollbar and corner. */
 function ScrollArea({
   className,
   children,
@@ -27,6 +28,7 @@ function ScrollArea({
   )
 }
 
+/** Renders a styled Radix scrollbar and thumb in the requested orientation. */
 function ScrollBar({
   className,
   orientation = "vertical",

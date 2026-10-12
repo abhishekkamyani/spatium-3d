@@ -25,16 +25,22 @@ const ROUTE: [number, number][] = [
   [3, 3],
 ];
 
+/** Projects grid coordinates onto the SVG’s isometric plane in pixels. */
 function project(x: number, z: number): [number, number] {
   return [ORIGIN_X + (x - z) * TILE_W, ORIGIN_Y + (x + z) * TILE_H];
 }
 
+/**
+ * Returns SVG polygon points for a tile centered at the given pixel coordinates.
+ * The scale multiplies the base tile width and height.
+ */
 function diamond(cx: number, cy: number, scale = 1): string {
   const w = TILE_W * scale;
   const h = TILE_H * scale;
   return `${cx},${cy - h} ${cx + w},${cy} ${cx},${cy + h} ${cx - w},${cy}`;
 }
 
+/** Draws an isometric rack using the preview’s fixed stock and target highlights. */
 function Rack({ x, z }: { x: number; z: number }) {
   const [cx, cy] = project(x, z);
   const w = TILE_W * 0.8;
@@ -71,6 +77,7 @@ function Rack({ x, z }: { x: number; z: number }) {
   );
 }
 
+/** Renders a static SVG warehouse preview with stocked racks, dock, and pick route. */
 export function IsoWarehouse({ className }: { className?: string }) {
   const cells = Array.from({ length: ROWS * COLS }, (_, i) => ({
     x: i % COLS,

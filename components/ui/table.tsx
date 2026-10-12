@@ -3,6 +3,7 @@
 import * as React from "react"
 import { cn } from "cn"
 
+/** Wraps a styled table in a container that allows horizontal scrolling. */
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     <div
@@ -18,6 +19,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
   )
 }
 
+/** Renders a table header group with row separators. */
 function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   return (
     <thead
@@ -28,6 +30,7 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   )
 }
 
+/** Renders a table body without a separator after its last row. */
 function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
   return (
     <tbody
@@ -38,6 +41,7 @@ function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
   )
 }
 
+/** Renders a table footer group with a muted background and top border. */
 function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
   return (
     <tfoot
@@ -51,6 +55,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
   )
 }
 
+/** Renders a table row with hover, expanded, and selected state styling. */
 function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
   return (
     <tr
@@ -64,6 +69,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
   )
 }
 
+/** Renders a table header cell with shared spacing and alignment. */
 function TableHead({ className, ...props }: React.ComponentProps<"th">) {
   return (
     <th
@@ -77,6 +83,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
   )
 }
 
+/** Renders a table data cell with shared spacing and alignment. */
 function TableCell({ className, ...props }: React.ComponentProps<"td">) {
   return (
     <td
@@ -90,6 +97,7 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
   )
 }
 
+/** Renders a muted caption beneath the table. */
 function TableCaption({
   className,
   ...props

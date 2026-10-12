@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site";
 // landing page is listed. Bump this date when the landing copy changes.
 const LANDING_LAST_MODIFIED = "2026-10-11";
 
+/** Lists the public landing page with its recorded content modification date. */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Boxes } from "lucide-react";
 
+/** Renders the Spatium 3D wordmark and icon as a link to the home page. */
 export function Brand() {
   return (
     <Link

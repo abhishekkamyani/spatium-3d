@@ -40,6 +40,7 @@ const buttonVariants = cva(
   }
 )
 
+/** Renders a button with variant and size styling, optionally applied to a child through a slot. */
 function Button({
   className,
   variant = "default",

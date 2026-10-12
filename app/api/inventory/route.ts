@@ -7,6 +7,7 @@ import {
 } from "@/lib/warehouse";
 import { Inventory } from "@/models/Inventory";
 
+/** Returns inventory sorted by SKU, or a 503 response if the database query fails. */
 export async function GET() {
   await connection();
 

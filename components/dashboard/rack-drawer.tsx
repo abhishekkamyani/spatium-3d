@@ -11,6 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useWarehouseStore } from "@/lib/store";
 import type { InventoryItem } from "@/lib/warehouse";
 
+/** Displays one SKU with controls to add or remove a validated quantity of stock. */
 function StockItem({ item }: { item: InventoryItem }) {
   const updateItem = useWarehouseStore((state) => state.updateItem);
   const [amount, setAmount] = useState("1");
@@ -90,6 +91,7 @@ function StockItem({ item }: { item: InventoryItem }) {
   );
 }
 
+/** Shows inventory, stock controls, and pick route details for the selected rack. */
 export function RackDrawer() {
   const selected = useWarehouseStore((state) => state.selected);
   const inventory = useWarehouseStore((state) => state.inventory);

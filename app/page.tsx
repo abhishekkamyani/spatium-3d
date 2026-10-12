@@ -71,6 +71,7 @@ const steps = [
   },
 ];
 
+/** Renders the product landing page and its SoftwareApplication structured data. */
 export default function Home() {
   return (
     <>

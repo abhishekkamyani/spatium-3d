@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+/** Passes through dashboard content within the route that disables search indexing. */
 export default function DashboardLayout({
   children,
 }: LayoutProps<"/dashboard">) {

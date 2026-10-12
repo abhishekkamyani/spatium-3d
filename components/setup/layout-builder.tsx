@@ -24,6 +24,10 @@ import {
 const GLASS_CARD =
   "border border-white/10 bg-black/40 text-slate-200 ring-0 backdrop-blur-xl";
 
+/**
+ * Renders a controlled rack grid with pointer painting, keyboard toggles, and save controls.
+ * The dock cell is disabled to keep it clear during editing.
+ */
 export function LayoutBuilder({
   grid,
   onChange,

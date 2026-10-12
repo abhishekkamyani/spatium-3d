@@ -61,6 +61,7 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
+/** Wraps all pages with document language, shared fonts, dark styling, and toast notifications. */
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html

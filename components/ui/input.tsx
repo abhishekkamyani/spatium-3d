@@ -1,6 +1,7 @@
 import * as React from "react"
 import { cn } from "cn"
 
+/** Renders a styled native input with shared focus, disabled, and invalid states. */
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
     <input

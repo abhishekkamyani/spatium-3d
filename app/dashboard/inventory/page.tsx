@@ -25,6 +25,7 @@ import {
 import { useWarehouseStore } from "@/lib/store";
 import { isRack } from "@/lib/warehouse";
 
+/** Loads inventory and renders SKU/name search, stock totals, and editable rows. */
 export default function InventoryPage() {
   const status = useWarehouseStore((state) => state.status);
   const error = useWarehouseStore((state) => state.error);

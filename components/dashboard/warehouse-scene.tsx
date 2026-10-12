@@ -24,6 +24,7 @@ const COLORS = {
 
 type Vec3 = [number, number, number];
 
+/** Renders a selectable rack mesh colored by stock, selection, and hover state. */
 function Rack({
   position,
   stocked,
@@ -117,6 +118,7 @@ function PickPath({ points }: { points: Vec3[] }) {
   );
 }
 
+/** Builds the centered warehouse floor, racks, dock marker, and current pick route. */
 function Warehouse({ layoutMatrix }: { layoutMatrix: LayoutMatrix }) {
   const inventory = useWarehouseStore((state) => state.inventory);
   const selected = useWarehouseStore((state) => state.selected);
@@ -187,6 +189,7 @@ function Warehouse({ layoutMatrix }: { layoutMatrix: LayoutMatrix }) {
   );
 }
 
+/** Renders the warehouse canvas with lighting and orbit controls scaled to the layout. */
 export default function WarehouseScene() {
   const layoutMatrix = useWarehouseStore((state) => state.layoutMatrix);
   const selectRack = useWarehouseStore((state) => state.selectRack);

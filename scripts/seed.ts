@@ -30,6 +30,11 @@ const inventory: InventoryItem[] = [
   { sku: "AS-1010", name: "Packing Tape 2in (36 Rolls)", quantity: 92, x: 10, z: 6 },
 ];
 
+/**
+ * Validates the sample inventory’s rack locations, then deletes all warehouse and
+ * inventory documents and inserts the sample data. Logs the inserted counts.
+ * Database failures reject the promise; replacement is not transactional.
+ */
 async function seed() {
   await connectToDatabase();
 

@@ -3,6 +3,10 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { parseLayoutMatrix } from "@/lib/warehouse";
 import { Warehouse } from "@/models/Warehouse";
 
+/**
+ * Returns the most recently updated warehouse, or null when none exists.
+ * Returns a 503 response if the database query fails.
+ */
 export async function GET() {
   await connection();
 
@@ -24,6 +28,10 @@ export async function GET() {
   }
 }
 
+/**
+ * Validates and saves the layout of the most recently updated warehouse,
+ * creating one if needed. Returns 400 for an invalid matrix or 503 on save failure.
+ */
 export async function PUT(request: Request) {
   const body: unknown = await request.json().catch(() => null);
   const parsed = parseLayoutMatrix(

@@ -21,6 +21,7 @@ const toDraft = (item: InventoryItem): Draft => ({
   z: String(item.z),
 });
 
+/** Renders an inventory row with rack status and validated inline editing of item details. */
 export function StockRow({
   item,
   onRack,

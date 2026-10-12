@@ -10,6 +10,7 @@ import { LayoutBuilder } from "@/components/setup/layout-builder";
 import { Button } from "@/components/ui/button";
 import { createEmptyLayout, type LayoutMatrix } from "@/lib/warehouse";
 
+/** Loads the saved layout and coordinates grid editing, layout saving, and CSV import. */
 export default function SetupPage() {
   const [grid, setGrid] = useState<LayoutMatrix>(() => createEmptyLayout());
   const [loading, setLoading] = useState(true);

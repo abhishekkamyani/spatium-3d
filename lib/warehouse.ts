@@ -14,6 +14,7 @@ export const DEFAULT_GRID_SIZE = 20;
 export const MAX_GRID_SIZE = 60;
 export const MAX_IMPORT_ROWS = 5000;
 
+/** Creates a square layout of the requested size with every cell set to floor. */
 export function createEmptyLayout(size = DEFAULT_GRID_SIZE): LayoutMatrix {
   return Array.from({ length: size }, () => Array<number>(size).fill(FLOOR));
 }
@@ -32,10 +33,12 @@ export function createDefaultLayout(size = DEFAULT_GRID_SIZE): LayoutMatrix {
   );
 }
 
+/** Reports whether the cell at matrix[z][x] is a rack; out-of-bounds cells return false. */
 export function isRack(matrix: LayoutMatrix, x: number, z: number): boolean {
   return matrix[z]?.[x] === RACK;
 }
 
+/** Serializes an x/z grid position as a stable colon-separated key. */
 export function cellKey(x: number, z: number): string {
   return `${x}:${z}`;
 }
@@ -90,12 +93,14 @@ export function parseInventoryItem(value: unknown): InventoryItem | null {
   return { sku, name, quantity, x, z };
 }
 
+/** Converts numbers and nonblank numeric strings to numbers; returns NaN for other values. */
 function toNumber(value: unknown): number {
   if (typeof value === "number") return value;
   if (typeof value === "string" && value.trim() !== "") return Number(value);
   return Number.NaN;
 }
 
+/** Checks that a coordinate is an integer from zero up to, but excluding, MAX_GRID_SIZE. */
 function isGridCoordinate(value: number): boolean {
   return Number.isInteger(value) && value >= 0 && value < MAX_GRID_SIZE;
 }
